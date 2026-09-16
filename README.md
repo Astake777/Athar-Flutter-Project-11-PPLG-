@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # fluttertest1
 
 A new Flutter project.
@@ -15,3 +16,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Athar-Flutter-Project-11-PPLG-
+>>>>>>> 8af9e268eebe40e1b0ccfd5e0d60be6f2a45dc88
