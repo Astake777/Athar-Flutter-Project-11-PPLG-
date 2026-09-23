@@ -16,22 +16,76 @@ class KalkulatorPage extends StatelessWidget {
       appBar: AppBar(title: Text("kalkulator")),
       body: Column(
         children: [
-          CustomTextfield(txtController: txtAngka1, myHint: "input angka 1"),
-          CustomTextfield(txtController: txtAngka2, myHint: "input angka 2"),
+          Container(
+            margin: EdgeInsets.all(10),
+            child: CustomTextfield(txtController: txtAngka1, myHint: "input angka 1", numberOnly: true),
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            child: CustomTextfield(txtController: txtAngka2, myHint: "input angka 2", numberOnly: true),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  if (controller.inputKosong(txtAngka1.text, txtAngka2.text)) return;
+                  // panggil method tambah di controller
+                  int angka1 = int.parse(txtAngka1.text);
+                  int angka2 = int.parse(txtAngka2.text);
+                  controller.tambah(angka1, angka2);
+                },
+                child: Text("+"),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {
+                  if (controller.inputKosong(txtAngka1.text, txtAngka2.text)) return;
+                  int angka1 = int.parse(txtAngka1.text);
+                  int angka2 = int.parse(txtAngka2.text);
+                  controller.kurang(angka1, angka2);
+                },
+                child: Text("-"),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {
+                  if (controller.inputKosong(txtAngka1.text, txtAngka2.text)) return;
+                  int angka1 = int.parse(txtAngka1.text);
+                  int angka2 = int.parse(txtAngka2.text);
+                  controller.kali(angka1, angka2);
+                },
+                child: Text("x"),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {
+                  if (controller.inputKosong(txtAngka1.text, txtAngka2.text)) return;
+                  int angka1 = int.parse(txtAngka1.text);
+                  int angka2 = int.parse(txtAngka2.text);
+                  controller.bagi(angka1, angka2);
+                },
+                child: Text("/"),
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
-              // panggil method tambah di controller
-              int angka1 = int.parse(txtAngka1.text);
-              int angka2 = int.parse(txtAngka2.text);
-              controller.tambah(angka1, angka2);
+              // kosongkan textfield dan hasil
+              txtAngka1.clear();
+              txtAngka2.clear();
+              controller.reset();
             },
-            child: Text("Tambah"),
+            child: Text("Reset"),
           ),
-          Obx(
-            () => Text(
-              controller.hasil.toString(),
-              style: TextStyle(fontSize: 30),
-            ),
+          Container(
+            margin: EdgeInsets.all(10),
+            // Obx otomatis update kalau hasil di controller berubah
+            child: Obx(() => Text(
+              "Hasil: ${controller.hasil}",
+              style: TextStyle(fontSize: 20),
+            )),
           ),
         ],
       ),
