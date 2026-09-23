@@ -46,3 +46,11 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Claude / AI tooling
+.claude/
+**/.claude/
+.claude-flow/
+**/.claude-flow/
+CLAUDE.md
+DOKUMENTASI.md

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertest1/pages/kalkulator_page.dart';
 // Pastikan nama package ini sesuai dengan yang ada di pubspec.yaml Anda
 import 'package:fluttertest1/pages/login_clone_page.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         // Tambahkan kata "ColorScheme" sebelum ".fromSeed"
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const LoginClonePage()
+      home: KalkulatorPage()
     );
   }
 }
