@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
+class CustomButton2 extends StatelessWidget {
   // kita list variabel2 yang diperlukan
   final String myText;
   final VoidCallback onPressed;
   final Color? myColor;
 
-  const CustomButton({
+  const CustomButton2({
     super.key,
     required this.myText,
     required this.onPressed,
-    this.myColor, required String label, required String text,
+    this.myColor,
   });
 
   @override

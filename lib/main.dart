@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:fluttertest1/pages/kalkulator_page.dart';
-// Pastikan nama package ini sesuai dengan yang ada di pubspec.yaml Anda
-import 'package:fluttertest1/pages/login_clone_page.dart';
+import 'routes.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,15 +9,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // Tambahkan kata "ColorScheme" sebelum ".fromSeed"
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: KalkulatorPage()
+      title: "My Learning App",
+      initialRoute: Routes.login,
+      getPages: Routes.myPages,
     );
   }
 }
