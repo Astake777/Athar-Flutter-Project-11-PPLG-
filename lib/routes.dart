@@ -1,3 +1,5 @@
+import 'package:fluttertest1/pages/detail_makanan_page.dart';
+import 'package:fluttertest1/pages/list_makanan_page.dart';
 import 'package:fluttertest1/pages/main_menu_page.dart';
 
 import 'pages/confirm_reg.dart';
@@ -13,6 +15,8 @@ class Routes {
   static const String login = "/login";
   static const String kalkulator = "/kalkulator";
   static const String mainmenu = "/mainmenu";
+  static const String list_makanan = "/list_makanan";
+  static const String detail_makanan = "/detail_makanan";
   // others pages here
 
   // untuk kita daftarkan di main dart, isinya array page yang kita punya
@@ -22,5 +26,7 @@ class Routes {
     GetPage(name: login, page: () => LoginClonePage()),
     GetPage(name: kalkulator, page: () => KalkulatorPage()),
     GetPage(name: mainmenu, page: () => MainMenuPage()),
+    GetPage(name: list_makanan, page: () => ListMakananPage()),
+    GetPage(name: detail_makanan, page: () => DetailMakananPage()),
   ];
 }
