@@ -3,8 +3,8 @@ import 'package:fluttertest1/models/review_model.dart';
 import 'package:get/get.dart';
 
 class ListMakananController extends GetxController {
-  // kita buat data datanya (data contoh, ganti dengan data asli)
-  List<MakananModel> listMakanan = [
+  // kita buat data datanya
+  RxList<MakananModel> listMakanan = [
     MakananModel(
       namaMakanan: "Soto Ayam",
       hargaMakanan: "10.000",
@@ -62,5 +62,9 @@ class ListMakananController extends GetxController {
       ],
     ),
     // dll
-  ];
+  ].obs;
+
+  void hapus(int index) {
+    listMakanan.removeAt(index);
+  }
 }

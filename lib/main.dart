@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "My Learning App",
-      initialRoute: Routes.list_makanan, // Set halaman awal ke ListMakananPage
+      initialRoute: Routes.main_menu_page3,
       getPages: Routes.myPages,
     );
   }

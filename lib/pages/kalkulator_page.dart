@@ -72,7 +72,6 @@ class KalkulatorPage extends StatelessWidget {
           SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
-              // kosongkan textfield dan hasil
               txtAngka1.clear();
               txtAngka2.clear();
               controller.reset();
@@ -81,7 +80,6 @@ class KalkulatorPage extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.all(10),
-            // Obx otomatis update kalau hasil di controller berubah
             child: Obx(() => Text(
               "Hasil: ${controller.hasil}",
               style: TextStyle(fontSize: 20),

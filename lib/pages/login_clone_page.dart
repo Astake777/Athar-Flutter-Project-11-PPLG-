@@ -27,7 +27,6 @@ class _LoginClonePageState extends State<LoginClonePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // kita isi logo, judul, toggle, textfield, dan button
             SizedBox(height: 80),
             Center(child: MyImage(path: "assets/logo.png")),
             SizedBox(height: 20),
@@ -68,7 +67,6 @@ class _LoginClonePageState extends State<LoginClonePage> {
                 myHint: "Masukkan password",
               ),
             ),
-            // tampil kalau login gagal
             if (statusLogin == "failed")
               Container(
                 margin: EdgeInsets.only(left: 10),
@@ -99,7 +97,6 @@ class _LoginClonePageState extends State<LoginClonePage> {
                 },
               ),
             ),
-            // pindah ke halaman registration
             Center(
               child: TextButton(
                 onPressed: () {

@@ -3,14 +3,12 @@ import 'package:get/get.dart';
 import '../routes.dart';
 
 class RegistrationController extends GetxController {
-  // 1. Deklarasi controller untuk mengelola input dari pengguna
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController alamatController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController noWaController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  // pilihan jenis kelamin untuk dropdown
   final listJenisKelamin = ["Laki laki", "Perempuan"];
   var jenisKelamin = "Laki laki".obs;
 
@@ -18,7 +16,6 @@ class RegistrationController extends GetxController {
     jenisKelamin.value = value;
   }
 
-  // 2. Fungsi yang akan dijalankan saat tombol "Register" ditekan
   void register() {
     String name = fullNameController.text;
     String alamat = alamatController.text;
@@ -26,13 +23,11 @@ class RegistrationController extends GetxController {
     String noWa = noWaController.text;
     String password = passwordController.text;
 
-    // Contoh validasi sederhana
     if (name.isNotEmpty &&
         alamat.isNotEmpty &&
         email.isNotEmpty &&
         noWa.isNotEmpty &&
         password.isNotEmpty) {
-      // Menampilkan notifikasi pop-up bawaan GetX jika berhasil
       Get.snackbar(
         'Berhasil',
         'Akun $name berhasil dibuat!',
@@ -41,7 +36,6 @@ class RegistrationController extends GetxController {
         colorText: Colors.white,
       );
 
-      // pindah ke halaman confirm registration dan kirim data lewat arguments
       Get.toNamed(
         Routes.confirm_registration,
         arguments: {
@@ -53,7 +47,6 @@ class RegistrationController extends GetxController {
         },
       );
     } else {
-      // Menampilkan pesan error jika ada kolom yang kosong
       Get.snackbar(
         'Gagal',
         'Pastikan semua kolom telah diisi',
@@ -66,7 +59,6 @@ class RegistrationController extends GetxController {
 
   @override
   void onClose() {
-    // 3. Wajib: Membersihkan controller dari memori agar aplikasi tidak berat/bocor (memory leak)
     fullNameController.dispose();
     alamatController.dispose();
     emailController.dispose();

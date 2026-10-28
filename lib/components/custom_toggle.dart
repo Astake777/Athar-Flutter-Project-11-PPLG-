@@ -22,7 +22,6 @@ class _CustomToggleState extends State<CustomToggle> {
     );
   }
 
-  // tab jadi putih kalau lagi dipilih
   Widget tombolTab(String label, int index) {
     bool aktif = tab == index;
     return Expanded(

@@ -20,7 +20,6 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: myColor,
-          // kalau tombol diberi warna, teksnya putih supaya terbaca
           foregroundColor: myColor != null ? Colors.white : null,
           padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           shape: RoundedRectangleBorder(

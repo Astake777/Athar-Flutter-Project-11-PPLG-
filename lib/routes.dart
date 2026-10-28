@@ -1,6 +1,8 @@
 import 'package:fluttertest1/pages/detail_makanan_page.dart';
 import 'package:fluttertest1/pages/list_makanan_page.dart';
 import 'package:fluttertest1/pages/main_menu_page.dart';
+import 'package:fluttertest1/pages/main_menu_pages2.dart';
+import 'package:fluttertest1/pages/main_menu_page3.dart';
 
 import 'pages/confirm_reg.dart';
 import 'pages/kalkulator_page.dart';
@@ -17,6 +19,8 @@ class Routes {
   static const String mainmenu = "/mainmenu";
   static const String list_makanan = "/list_makanan";
   static const String detail_makanan = "/detail_makanan";
+  static const String main_menu_pages2 = "/main_menu_pages2";
+  static const String main_menu_page3 = "/main_menu_page3";
   // others pages here
 
   // untuk kita daftarkan di main dart, isinya array page yang kita punya
@@ -28,5 +32,7 @@ class Routes {
     GetPage(name: mainmenu, page: () => MainMenuPage()),
     GetPage(name: list_makanan, page: () => ListMakananPage()),
     GetPage(name: detail_makanan, page: () => DetailMakananPage()),
+    GetPage(name: main_menu_pages2, page: () => MainMenuPage2()),
+    GetPage(name: main_menu_page3, page: () => MainMenuPage3()),
   ];
 }

@@ -18,7 +18,6 @@ class _LoginCloneState extends State<LoginClone> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        // biar bisa discroll pas keyboard muncul
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
@@ -29,7 +28,6 @@ class _LoginCloneState extends State<LoginClone> {
                 child: Image.asset(
                   "assets/logo.png",
                   height: 180,
-                  // kalau logo belum ada, pakai icon dulu
                   errorBuilder: (_, _, _) => const Icon(
                     Icons.school,
                     size: 180,
@@ -53,7 +51,6 @@ class _LoginCloneState extends State<LoginClone> {
               ),
               const SizedBox(height: 28),
 
-              // toggle Guru / Murid
               Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
@@ -87,7 +84,6 @@ class _LoginCloneState extends State<LoginClone> {
                   hint: "Masukkan password",
                   icon: Icons.shield,
                 ).copyWith(
-                  // icon mata untuk show/hide password
                   suffixIcon: IconButton(
                     icon: Icon(
                       _sembunyikanPassword ? Icons.visibility_off : Icons.visibility,
@@ -105,7 +101,7 @@ class _LoginCloneState extends State<LoginClone> {
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                  onPressed: () {}, // belum ada fungsi login
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: biru,
                     foregroundColor: Colors.white,
@@ -125,7 +121,6 @@ class _LoginCloneState extends State<LoginClone> {
     );
   }
 
-  // tab putih kalau lagi dipilih
   Widget _tabButton(String label, int index) {
     final aktif = _tab == index;
     return Expanded(
@@ -151,7 +146,6 @@ class _LoginCloneState extends State<LoginClone> {
     );
   }
 
-  // style textfield biar NIY & password sama
   InputDecoration _inputDecoration({required String hint, required IconData icon}) {
     final border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),

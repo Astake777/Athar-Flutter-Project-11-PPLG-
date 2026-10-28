@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class MyImage extends StatelessWidget {
-  // kita list variabel2 yang diperlukan
   final String path;
   final double height;
 

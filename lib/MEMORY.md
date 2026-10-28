@@ -1,0 +1,1 @@
+- [Never commit or push](never-commit-or-push.md) — user does git themselves so Claude never shows as a GitHub contributor

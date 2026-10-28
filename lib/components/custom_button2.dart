@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class CustomButton2 extends StatelessWidget {
-  // kita list variabel2 yang diperlukan
   final String myText;
   final VoidCallback onPressed;
   final Color? myColor;
@@ -20,7 +19,6 @@ class CustomButton2 extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: myColor,
-          // kalau tombol diberi warna, teksnya putih supaya terbaca
           foregroundColor: myColor != null ? Colors.white : null,
           padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           shape: RoundedRectangleBorder(

@@ -3,10 +3,10 @@ import 'package:fluttertest1/models/review_model.dart';
 class MakananModel {
   String namaMakanan;
   String hargaMakanan;
-  String gambar; // url gambar
-  String desc; // info makanan
+  String gambar;
+  String desc;
   int rating; // jumlah bintang 1-5
-  List<ReviewModel> review; // review dari pembeli
+  List<ReviewModel> review;
 
   MakananModel({
     required this.namaMakanan,

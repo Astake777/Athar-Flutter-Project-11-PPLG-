@@ -50,7 +50,6 @@ class ConfirmRegPage extends StatelessWidget {
             CustomButton(
               myText: "Oke",
               onPressed: () {
-                // kembali ke halaman registration
                 Get.back();
               }, label: 'Oke', text: 'Oke',
             ),

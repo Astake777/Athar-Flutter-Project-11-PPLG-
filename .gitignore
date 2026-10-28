@@ -54,3 +54,5 @@ app.*.map.json
 **/.claude-flow/
 CLAUDE.md
 DOKUMENTASI.md
+DOKUMENTASI*.md
+DOKUMENTASI*.docx

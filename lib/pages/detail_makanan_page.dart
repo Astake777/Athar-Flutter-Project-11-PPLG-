@@ -3,22 +3,21 @@ import 'package:fluttertest1/components/custom_button2.dart';
 import 'package:fluttertest1/components/my_network_image.dart';
 import 'package:fluttertest1/components/rating_stars.dart';
 import 'package:fluttertest1/components/review_item.dart';
-import 'package:fluttertest1/models/makanan_model.dart';
+import 'package:fluttertest1/controller/detail_makanan_controller.dart';
 import 'package:get/get.dart';
 
 class DetailMakananPage extends StatelessWidget {
   DetailMakananPage({super.key});
 
-  // data makanan dikirim dari halaman list lewat arguments
-  final MakananModel makanan = Get.arguments;
+  final controller = Get.put(DetailMakananController());
 
   @override
   Widget build(BuildContext context) {
+    final makanan = controller.makanan;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // gambar di belakang, isi detail menimpa dari bawah
           MyNetworkImage(url: makanan.gambar, width: double.infinity, height: 300),
           SingleChildScrollView(
             padding: EdgeInsets.only(top: 270),
@@ -83,7 +82,6 @@ class DetailMakananPage extends StatelessWidget {
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 8),
-                  // kalau belum ada review, tampilkan teks kosong
                   if (makanan.review.isEmpty)
                     Text("Belum ada review", style: TextStyle(color: Color(0xFF8A8F9C))),
                   for (var review in makanan.review) ReviewItem(review: review),
@@ -91,7 +89,6 @@ class DetailMakananPage extends StatelessWidget {
               ),
             ),
           ),
-          // tombol back bulat di atas gambar
           SafeArea(
             child: Padding(
               padding: EdgeInsets.all(10),

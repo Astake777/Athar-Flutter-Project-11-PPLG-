@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-// Import controller Anda
 import '../controller/registration_controller.dart'; 
-// Import custom button
 import '../components/custom_button.dart';
 
 class RegistrationPage extends StatelessWidget {
@@ -12,7 +10,6 @@ class RegistrationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Inisialisasi controller
     final RegistrationController controller = Get.put(RegistrationController());
 
     return Scaffold(
@@ -38,8 +35,6 @@ class RegistrationPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
 
-                // Menggunakan komponen bawaan Flutter (TextField) 
-                // untuk mengatasi error CustomTextField sementara
                 TextField(
                   controller: controller.fullNameController,
                   decoration: const InputDecoration(
@@ -49,7 +44,6 @@ class RegistrationPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
-                // dropdown jenis kelamin
                 Obx(
                   () => DropdownButtonFormField<String>(
                     value: controller.jenisKelamin.value,
@@ -87,7 +81,6 @@ class RegistrationPage extends StatelessWidget {
 
                 TextField(
                   controller: controller.noWaController,
-                  // no wa hanya boleh angka
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   decoration: const InputDecoration(
@@ -99,7 +92,7 @@ class RegistrationPage extends StatelessWidget {
 
                 TextField(
                   controller: controller.passwordController,
-                  obscureText: true, // Menyembunyikan password
+                  obscureText: true,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Password',
@@ -107,12 +100,9 @@ class RegistrationPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
 
-                // Komponen Button custom. 
-                // Error sebelumnya menyatakan parameter 'text' wajib ada
                 CustomButton(
-                  text: 'Register', // Diubah menjadi text sesuai error
+                  text: 'Register',
                   onPressed: () {
-                    // Memanggil fungsi dari controller agar variabel 'controller' terpakai
                     controller.register();
                   }, label: 'Register', myText: 'Register', 
                 ),

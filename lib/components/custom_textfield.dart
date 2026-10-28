@@ -29,7 +29,6 @@ class CustomTextfield extends StatelessWidget {
     return TextField(
       controller: txtController,
       obscureText: obscureText,
-      // kalau numberOnly true, keyboard angka dan hanya bisa input angka
       keyboardType: numberOnly ? TextInputType.number : keyboardType,
       inputFormatters: numberOnly
           ? [FilteringTextInputFormatter.digitsOnly]

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertest1/components/custom_textfield.dart';
 
 class CustomPasswordField extends StatefulWidget {
-  // kita list variabel2 yang diperlukan
   final TextEditingController txtController;
   final String myHint;
 
@@ -26,7 +25,6 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
       myHint: widget.myHint,
       icon: Icons.shield,
       obscureText: sembunyikan,
-      // icon mata untuk lihat / sembunyikan password
       suffixIcon: IconButton(
         icon: Icon(sembunyikan ? Icons.visibility_off : Icons.visibility),
         onPressed: () {

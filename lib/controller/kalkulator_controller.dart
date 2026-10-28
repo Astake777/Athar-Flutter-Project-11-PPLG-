@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 class KalkulatorController extends GetxController {
   var hasil = 0.0.obs;
 
-  // cek input kosong, kalau kosong tampilkan peringatan
   bool inputKosong(String angka1, String angka2) {
     if (angka1.isEmpty || angka2.isEmpty) {
       Get.snackbar(

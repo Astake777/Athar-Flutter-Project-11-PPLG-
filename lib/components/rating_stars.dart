@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class RatingStars extends StatelessWidget {
-  // kita list variabel2 yang diperlukan
   final int rating;
   final double size;
 
@@ -9,7 +8,6 @@ class RatingStars extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 5 bintang, yang terisi sesuai nilai rating
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: List.generate(5, (index) {

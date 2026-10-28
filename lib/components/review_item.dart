@@ -3,7 +3,6 @@ import 'package:fluttertest1/components/rating_stars.dart';
 import 'package:fluttertest1/models/review_model.dart';
 
 class ReviewItem extends StatelessWidget {
-  // kita list variabel2 yang diperlukan
   final ReviewModel review;
 
   const ReviewItem({super.key, required this.review});
@@ -20,7 +19,6 @@ class ReviewItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // avatar dari huruf pertama nama pembeli
           CircleAvatar(
             radius: 18,
             backgroundColor: Colors.white,
