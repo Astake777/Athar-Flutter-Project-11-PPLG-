@@ -1,17 +1,19 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:fluttertest1/models/login_model.dart';
+import 'package:fluttertest1/routes.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:fluttertest1/routes.dart';
 
 class LoginController3 extends GetxController {
   TextEditingController txtUsername = TextEditingController();
   TextEditingController txtPassword = TextEditingController();
   RxBool isLoading = false.obs;
 
+  var loginModel = Rxn<LoginModel>();
+
   Future<void> login() async {
     if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
-      Get.snackbar("Peringatan", "Username dan password harus diisi");
+      Get.snackbar("error", "username dan password harus terisi");
       return;
     }
 
@@ -23,18 +25,19 @@ class LoginController3 extends GetxController {
       );
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        if (data["status"] == true) {
-          Get.snackbar("Sukses", data["message"]);
+        loginModel.value = loginModelFromJson(response.body);
+
+        if (loginModel.value?.status == true) {
+          Get.snackbar("berhasil", loginModel.value!.message);
           Get.offNamed(Routes.main_menu_page3);
         } else {
-          Get.snackbar("Gagal", data["message"]);
+          Get.snackbar("gagal", loginModel.value!.message);
         }
       } else {
-        Get.snackbar("Error", "Server error: ${response.statusCode}");
+        Get.snackbar("gagal", "cek internet connection");
       }
     } catch (e) {
-      Get.snackbar("Gagal", "Tidak dapat terhubung ke server");
+      Get.snackbar("gagal", "Tidak dapat terhubung ke server");
     } finally {
       isLoading.value = false;
     }
